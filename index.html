@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ project_name }}</title>
+</head>
+<body>
+    <h1>{{ project_name }}</h1>
+
+    <h2 style="{{ student_info.color_style }} {{ student_info.italic_style }}">
+        {{ student_info.full_name }} | {{ student_info.group }}
+    </h2>
+
+    <h2>Films Table</h2>
+    <table border="1">
+        <tr>
+            <th><strong>film_code</strong></th>
+            <th><strong>title</strong></th>
+            <th><strong>genre</strong></th>
+            <th><strong>duration</strong></th>
+            <th><strong>rating</strong></th>
+        </tr>
+        {% for film in films %}
+        <tr>
+            <td>{{ film.film_code }}</td>
+            <td>{{ film.title }}</td>
+            <td>{{ film.genre }}</td>
+            <td>{{ film.duration }}</td>
+            <td>{{ film.rating }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+        <h2>Cinema Table</h2>
+    <table border="1">
+        <tr>
+            <th><strong>cinema_code</strong></th>
+            <th><strong>name</strong></th>
+            <th><strong>ticket_prices</strong></th>
+            <th><strong>seats_count</strong></th>
+            <th><strong>address</strong></th>
+            <th><strong>phone</strong></th>
+        </tr>
+        {% for cinema in cinemas %}
+        <tr>
+            <td>{{ cinema.cinema_code }}</td>
+            <td>{{ cinema.name }}</td>
+            <td>{{ cinema.ticket_prices }}</td>
+            <td>{{ cinema.ticket_prices }}</td>
+            <td>{{ cinema.address }}</td>
+            <td>{{ cinema.phone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Film Screenings Table</h2>
+    <table border="1">
+        <tr>
+            <th><strong>screening_code</strong></th>
+            <th><strong>film</strong></th>
+            <th><strong>cinema</strong></th>
+            <th><strong>start_date</strong></th>
+            <th><strong>show_duration</strong></th>
+        </tr>
+        {% for screening in screenings %}
+        <tr>
+            <td>{{ screening.screening_code }}</td>
+            <td>{{ screening.film.title }}</td>
+            <td>{{ screening.cinema.name }}</td>
+            <td>{{ screening.start_date }}</td>
+            <td>{{ screening.show_duration }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
